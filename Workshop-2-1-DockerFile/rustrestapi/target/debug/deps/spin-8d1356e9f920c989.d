@@ -1,0 +1,10 @@
+/Users/praparnlueangphoonlap/Work/Docker_Training/docker-workshop-032025/Workshop-2-1-DockerFile/rustrestapi/target/debug/deps/libspin-8d1356e9f920c989.rmeta: /Users/praparnlueangphoonlap/.cargo/registry/src/index.crates.io-6f17d22bba15001f/spin-0.5.2/src/lib.rs /Users/praparnlueangphoonlap/.cargo/registry/src/index.crates.io-6f17d22bba15001f/spin-0.5.2/src/mutex.rs /Users/praparnlueangphoonlap/.cargo/registry/src/index.crates.io-6f17d22bba15001f/spin-0.5.2/src/rw_lock.rs /Users/praparnlueangphoonlap/.cargo/registry/src/index.crates.io-6f17d22bba15001f/spin-0.5.2/src/once.rs
+
+/Users/praparnlueangphoonlap/Work/Docker_Training/docker-workshop-032025/Workshop-2-1-DockerFile/rustrestapi/target/debug/deps/libspin-8d1356e9f920c989.rlib: /Users/praparnlueangphoonlap/.cargo/registry/src/index.crates.io-6f17d22bba15001f/spin-0.5.2/src/lib.rs /Users/praparnlueangphoonlap/.cargo/registry/src/index.crates.io-6f17d22bba15001f/spin-0.5.2/src/mutex.rs /Users/praparnlueangphoonlap/.cargo/registry/src/index.crates.io-6f17d22bba15001f/spin-0.5.2/src/rw_lock.rs /Users/praparnlueangphoonlap/.cargo/registry/src/index.crates.io-6f17d22bba15001f/spin-0.5.2/src/once.rs
+
+/Users/praparnlueangphoonlap/Work/Docker_Training/docker-workshop-032025/Workshop-2-1-DockerFile/rustrestapi/target/debug/deps/spin-8d1356e9f920c989.d: /Users/praparnlueangphoonlap/.cargo/registry/src/index.crates.io-6f17d22bba15001f/spin-0.5.2/src/lib.rs /Users/praparnlueangphoonlap/.cargo/registry/src/index.crates.io-6f17d22bba15001f/spin-0.5.2/src/mutex.rs /Users/praparnlueangphoonlap/.cargo/registry/src/index.crates.io-6f17d22bba15001f/spin-0.5.2/src/rw_lock.rs /Users/praparnlueangphoonlap/.cargo/registry/src/index.crates.io-6f17d22bba15001f/spin-0.5.2/src/once.rs
+
+/Users/praparnlueangphoonlap/.cargo/registry/src/index.crates.io-6f17d22bba15001f/spin-0.5.2/src/lib.rs:
+/Users/praparnlueangphoonlap/.cargo/registry/src/index.crates.io-6f17d22bba15001f/spin-0.5.2/src/mutex.rs:
+/Users/praparnlueangphoonlap/.cargo/registry/src/index.crates.io-6f17d22bba15001f/spin-0.5.2/src/rw_lock.rs:
+/Users/praparnlueangphoonlap/.cargo/registry/src/index.crates.io-6f17d22bba15001f/spin-0.5.2/src/once.rs:

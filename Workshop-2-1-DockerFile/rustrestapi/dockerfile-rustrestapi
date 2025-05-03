@@ -1,0 +1,34 @@
+# Use the official Rust image as the base image
+FROM rust:1.75 as builder
+
+WORKDIR /app
+
+# Copy the actual source code
+COPY . .
+#RUN mkdir src && echo "fn main() {}" > src/main.rs
+RUN cargo update && cargo build --release && rm -rf src target/release/deps/rust_actix_api*
+
+
+# Build the Rust application
+RUN cargo build --release
+
+# Use a lightweight Debian-based image for the final runtime
+FROM debian:bullseye-slim
+
+WORKDIR /app
+
+# Install runtime dependencies
+RUN apt-get update && apt-get install -y libmariadb-dev-compat libmariadb-dev && rm -rf /var/lib/apt/lists/*
+
+# Copy the built binary from the builder stage
+COPY --from=builder /app/target/release/rust_actix_api /app/rust_actix_api
+
+# Expose the API port
+EXPOSE 5000
+
+# Set environment variables
+ENV MARIADB_URL="mysql://memberadmin:taleofdestiny@MainDB:3306/accoutable"
+ENV REDIS_URL="redis://CacheDB:6379"
+
+# Run the application
+CMD ["/app/rust_actix_api"]

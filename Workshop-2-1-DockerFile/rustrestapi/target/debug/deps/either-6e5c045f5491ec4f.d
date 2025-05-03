@@ -1,0 +1,9 @@
+/Users/praparnlueangphoonlap/Work/Docker_Training/docker-workshop-032025/Workshop-2-1-DockerFile/rustrestapi/target/debug/deps/libeither-6e5c045f5491ec4f.rmeta: /Users/praparnlueangphoonlap/.cargo/registry/src/index.crates.io-6f17d22bba15001f/either-1.13.0/src/lib.rs /Users/praparnlueangphoonlap/.cargo/registry/src/index.crates.io-6f17d22bba15001f/either-1.13.0/src/iterator.rs /Users/praparnlueangphoonlap/.cargo/registry/src/index.crates.io-6f17d22bba15001f/either-1.13.0/src/into_either.rs
+
+/Users/praparnlueangphoonlap/Work/Docker_Training/docker-workshop-032025/Workshop-2-1-DockerFile/rustrestapi/target/debug/deps/libeither-6e5c045f5491ec4f.rlib: /Users/praparnlueangphoonlap/.cargo/registry/src/index.crates.io-6f17d22bba15001f/either-1.13.0/src/lib.rs /Users/praparnlueangphoonlap/.cargo/registry/src/index.crates.io-6f17d22bba15001f/either-1.13.0/src/iterator.rs /Users/praparnlueangphoonlap/.cargo/registry/src/index.crates.io-6f17d22bba15001f/either-1.13.0/src/into_either.rs
+
+/Users/praparnlueangphoonlap/Work/Docker_Training/docker-workshop-032025/Workshop-2-1-DockerFile/rustrestapi/target/debug/deps/either-6e5c045f5491ec4f.d: /Users/praparnlueangphoonlap/.cargo/registry/src/index.crates.io-6f17d22bba15001f/either-1.13.0/src/lib.rs /Users/praparnlueangphoonlap/.cargo/registry/src/index.crates.io-6f17d22bba15001f/either-1.13.0/src/iterator.rs /Users/praparnlueangphoonlap/.cargo/registry/src/index.crates.io-6f17d22bba15001f/either-1.13.0/src/into_either.rs
+
+/Users/praparnlueangphoonlap/.cargo/registry/src/index.crates.io-6f17d22bba15001f/either-1.13.0/src/lib.rs:
+/Users/praparnlueangphoonlap/.cargo/registry/src/index.crates.io-6f17d22bba15001f/either-1.13.0/src/iterator.rs:
+/Users/praparnlueangphoonlap/.cargo/registry/src/index.crates.io-6f17d22bba15001f/either-1.13.0/src/into_either.rs:

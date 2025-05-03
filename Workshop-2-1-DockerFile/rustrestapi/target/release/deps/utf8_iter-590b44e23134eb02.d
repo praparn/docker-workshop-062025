@@ -1,0 +1,9 @@
+/Users/praparnlueangphoonlap/Work/Docker_Training/docker-workshop-032025/Workshop-2-1-DockerFile/rustrestapi/target/release/deps/libutf8_iter-590b44e23134eb02.rmeta: /Users/praparnlueangphoonlap/.cargo/registry/src/index.crates.io-6f17d22bba15001f/utf8_iter-1.0.4/src/lib.rs /Users/praparnlueangphoonlap/.cargo/registry/src/index.crates.io-6f17d22bba15001f/utf8_iter-1.0.4/src/indices.rs /Users/praparnlueangphoonlap/.cargo/registry/src/index.crates.io-6f17d22bba15001f/utf8_iter-1.0.4/src/report.rs
+
+/Users/praparnlueangphoonlap/Work/Docker_Training/docker-workshop-032025/Workshop-2-1-DockerFile/rustrestapi/target/release/deps/libutf8_iter-590b44e23134eb02.rlib: /Users/praparnlueangphoonlap/.cargo/registry/src/index.crates.io-6f17d22bba15001f/utf8_iter-1.0.4/src/lib.rs /Users/praparnlueangphoonlap/.cargo/registry/src/index.crates.io-6f17d22bba15001f/utf8_iter-1.0.4/src/indices.rs /Users/praparnlueangphoonlap/.cargo/registry/src/index.crates.io-6f17d22bba15001f/utf8_iter-1.0.4/src/report.rs
+
+/Users/praparnlueangphoonlap/Work/Docker_Training/docker-workshop-032025/Workshop-2-1-DockerFile/rustrestapi/target/release/deps/utf8_iter-590b44e23134eb02.d: /Users/praparnlueangphoonlap/.cargo/registry/src/index.crates.io-6f17d22bba15001f/utf8_iter-1.0.4/src/lib.rs /Users/praparnlueangphoonlap/.cargo/registry/src/index.crates.io-6f17d22bba15001f/utf8_iter-1.0.4/src/indices.rs /Users/praparnlueangphoonlap/.cargo/registry/src/index.crates.io-6f17d22bba15001f/utf8_iter-1.0.4/src/report.rs
+
+/Users/praparnlueangphoonlap/.cargo/registry/src/index.crates.io-6f17d22bba15001f/utf8_iter-1.0.4/src/lib.rs:
+/Users/praparnlueangphoonlap/.cargo/registry/src/index.crates.io-6f17d22bba15001f/utf8_iter-1.0.4/src/indices.rs:
+/Users/praparnlueangphoonlap/.cargo/registry/src/index.crates.io-6f17d22bba15001f/utf8_iter-1.0.4/src/report.rs:

@@ -1,0 +1,9 @@
+/Users/praparnlueangphoonlap/Work/Docker_Training/docker-workshop-032025/Workshop-2-1-DockerFile/rustrestapi/target/release/deps/libjobserver-5faffd6efa9ee5ac.rmeta: /Users/praparnlueangphoonlap/.cargo/registry/src/index.crates.io-6f17d22bba15001f/jobserver-0.1.32/src/lib.rs /Users/praparnlueangphoonlap/.cargo/registry/src/index.crates.io-6f17d22bba15001f/jobserver-0.1.32/src/error.rs /Users/praparnlueangphoonlap/.cargo/registry/src/index.crates.io-6f17d22bba15001f/jobserver-0.1.32/src/unix.rs
+
+/Users/praparnlueangphoonlap/Work/Docker_Training/docker-workshop-032025/Workshop-2-1-DockerFile/rustrestapi/target/release/deps/libjobserver-5faffd6efa9ee5ac.rlib: /Users/praparnlueangphoonlap/.cargo/registry/src/index.crates.io-6f17d22bba15001f/jobserver-0.1.32/src/lib.rs /Users/praparnlueangphoonlap/.cargo/registry/src/index.crates.io-6f17d22bba15001f/jobserver-0.1.32/src/error.rs /Users/praparnlueangphoonlap/.cargo/registry/src/index.crates.io-6f17d22bba15001f/jobserver-0.1.32/src/unix.rs
+
+/Users/praparnlueangphoonlap/Work/Docker_Training/docker-workshop-032025/Workshop-2-1-DockerFile/rustrestapi/target/release/deps/jobserver-5faffd6efa9ee5ac.d: /Users/praparnlueangphoonlap/.cargo/registry/src/index.crates.io-6f17d22bba15001f/jobserver-0.1.32/src/lib.rs /Users/praparnlueangphoonlap/.cargo/registry/src/index.crates.io-6f17d22bba15001f/jobserver-0.1.32/src/error.rs /Users/praparnlueangphoonlap/.cargo/registry/src/index.crates.io-6f17d22bba15001f/jobserver-0.1.32/src/unix.rs
+
+/Users/praparnlueangphoonlap/.cargo/registry/src/index.crates.io-6f17d22bba15001f/jobserver-0.1.32/src/lib.rs:
+/Users/praparnlueangphoonlap/.cargo/registry/src/index.crates.io-6f17d22bba15001f/jobserver-0.1.32/src/error.rs:
+/Users/praparnlueangphoonlap/.cargo/registry/src/index.crates.io-6f17d22bba15001f/jobserver-0.1.32/src/unix.rs:

@@ -1,0 +1,29 @@
+# Stage 1: Build the Rust application
+FROM labdocker/rust:1.72 as builder
+
+# Set the working directory
+WORKDIR /app
+
+# Copy the Cargo manifest and lock files
+COPY Cargo.toml ./
+
+# Copy the source code
+COPY src ./src
+
+# Build the application in release mode
+RUN cargo build --release
+
+# Stage 2: Create the runtime environment
+FROM labdocker/debian:bookworm-slim
+
+# Install any required libraries (here we install ca-certificates; add more if needed)
+RUN apt-get update && apt-get install -y ca-certificates && rm -rf /var/lib/apt/lists/*
+
+# Copy the compiled binary from the builder stage
+COPY --from=builder /app/target/release/rust_rest_api /usr/local/bin/rust_rest_api
+
+# Expose the port on which the application runs
+EXPOSE 5000
+
+# Set the default command to run the application
+CMD ["/usr/local/bin/rust_rest_api"]

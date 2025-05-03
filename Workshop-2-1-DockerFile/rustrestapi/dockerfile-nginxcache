@@ -1,0 +1,39 @@
+# Stage 1: Build the Rust application
+FROM labdocker/rust:1.72 as builder
+
+# Install musl-tools so we can link against musl (the builder image is Debian-based)
+RUN apt-get update && apt-get install -y musl-tools
+
+# Add the MUSL target for static linking
+RUN rustup target add x86_64-unknown-linux-musl
+
+# Set the working directory
+WORKDIR /app
+
+# Copy the Cargo manifest files
+COPY Cargo.toml ./
+
+# Copy the source code
+COPY src ./src
+
+# Build the application in release mode for the MUSL target
+RUN cargo build --release --target x86_64-unknown-linux-musl
+
+# Stage 2: Create the runtime environment based on Alpine Linux
+FROM labdocker/alpine:3.18
+
+# Install necessary runtime packages
+RUN apk add --no-cache ca-certificates
+
+# Set the working directory in the container
+WORKDIR /app
+
+# Copy the statically linked binary from the builder stage
+# Replace `rust_rest_api` with your binary name if it differs.
+COPY --from=builder /app/target/x86_64-unknown-linux-musl/release/rust_rest_api /usr/local/bin/rust_rest_api
+
+# Expose the port that your application listens on
+EXPOSE 5000
+
+# Set the default command to run your application
+CMD ["/usr/local/bin/rust_rest_api"]

@@ -1,0 +1,108 @@
+For this workshop. We will create 1 dockerfile for install NODEJS & NPM on Pure "Alpine Linux" with Add 1 file (Hello.JS) to path /nodejs/hello.js
+
+Part 1: Build image from scratch (multi method)
+-----------------------------------------------------------------------------------------------------------
+BUILD Scratch (From file):
+1. Check folder "Workshop-2-1-DockerFile" by command
+	ls ~/docker-workshop-012025/Workshop-2-1-DockerFile
+
+2. Build docker image from command: 
+	docker image build -t labdocker/hello-world:1.0 ~/docker-workshop-012025/Workshop-2-1-DockerFile/scratch/
+
+3. Test run docker image from command: "docker container run --rm labdocker/hello-world:1.0"
+
+Part 2: NODEJS/NGINX
+-----------------------------------------------------------------------------------------------------------
+NODEJS Container:
+
+1. Check folder "Workshop-2-1-DockerFile" by command
+	ls ~/docker-workshop-012025/Workshop-2-1-DockerFile
+
+2. Build docker image from command: 
+	docker image build -t labdocker/node:1.0 ~/docker-workshop-012025/Workshop-2-1-DockerFile/nodejs
+
+3. Create custom network for support stack by command:
+	docker network create --driver bridge \
+	--subnet=192.168.100.0/24 --ip-range=192.168.100.128/25 \
+	--gateway=192.168.100.5 --opt="com.docker.network.mtu"="1500" restful_switch
+
+4. Test run docker image from command: "docker container run -dt --name NODEJS --net=restful_switch --network-alias=nodejs -p 3000:3000 labdocker/node:1.0"
+
+5. open url:"http://<Public IP>:3000" or "curl http://<Public IP>:3000"
+
+
+NGINX Container:
+
+6. Build docker image from command:
+	docker image build -t labdocker/web:1.0 ~/docker-workshop-012025/Workshop-2-1-DockerFile/nginx
+
+7. Test run docker image from command: "docker container run -dt --name NGINX -p 8080:8080 --net=restful_switch --network-alias=nginx labdocker/web:1.0"
+
+8. open url:"http://<Public IP>:8080" or "curl http://<Public IP>:8080"
+
+9. open url:"http://<Public IP>:8080/nodejs" or or "curl http://<Public IP>:8080/nodejs"
+
+10. Clean Up Lab with command below
+
+	10.1 "docker container stop NGINX NODEJS"
+	10.2 "docker container rm NGINX NODEJS"
+
+
+Part 3: Rust Multistage Build Basic
+------------------------------------------------------------------------------------------------------------
+RUST Container:
+
+1. Check folder "Workshop-2-1-DockerFile" by command
+	ls ~/docker-workshop-112023/Workshop-2-1-DockerFile
+
+2. Build module "rustweb" by command:
+	docker image build -t labdocker/rustweb:1.0 ~/docker-workshop-012025/Workshop-2-1-DockerFile/rustweb
+
+3. Test run rust web server by command:
+    docker container run -dt --name rustweb --net=restful_switch --network-alias=rustweb -p 5000:5000 labdocker/rustweb:1.0
+
+4. Open url:"http://<Public IP>:5000" or "curl http://<Public IP>:5000"
+
+NGINX Container:
+5. Build module "rustcache" by command:
+	docker image build -t labdocker/rustcache:1.0 ~/docker-workshop-012025/Workshop-2-1-DockerFile/rustcache
+
+6. Test run rust cache by command:
+    docker container run -dt --name rustcache --net=restful_switch --network-alias=rustcache -p 8080:8080 labdocker/rustcache:1.0
+
+7. Open url:"http://<Public IP>:8080" or "curl http://<Public IP>:8080/rust"
+
+8. Clean Up Lab with command below
+	8.1 docker container stop rustweb rustcache
+	8.2 docker container rm rustweb rustcache
+
+
+Part 4: Rust Multistage Build Full Function RestAPI
+------------------------------------------------------------------------------------------------------------
+
+1. Check folder "Workshop-2-1-DockerFile" by command
+	ls ~/docker-workshop-112023/Workshop-2-1-DockerFile
+
+2. Pull require image on lab by command:
+	docker image pull labdocker/mariadb:lts
+	docker image pull labdocker/redis:7.2.7-alpine3.21
+
+3. Build module "webservice" by command:
+	cd ~/docker-workshop-112023/Workshop-2-1-DockerFile/rustrestapi
+	docker image build -t labdocker/webservice:1.0 -f dockerfile-rustrestapi --rm ./
+
+3. Build module "webcache" by command:
+	docker image build -t labdocker/webcache:1.0 -f dockerfile-nginxcache --rm ./
+
+4. 
+	(maindb: postgresql)
+	docker container run -dt --name maindb --net=restful_switch --network-alias=maindb -e POSTGRES_USER=webroot -e POSTGRES_PASSWORD=password labdocker/postgres:14.16-alpine3.20
+
+	(cachedb: redis)
+	docker container run -dt --name cachedb --net=restful_switch --network-alias=cachedb labdocker/redis:alpine3.18
+
+
+7. Clean Up lab by command:
+	docker container stop webcache webservice cachedb maindb
+	docker container rm webcache webservice cachedb maindb
+	docker network rm restful_switch
