@@ -2,13 +2,13 @@
 1. Check CPU configure on AWS (Need at least 2 CPUs)
 
 2. Download and Run "cAdvisor"
-	2.1 pull image with command: docker image pull labdocker/cadvisor:0.47.2
+	2.1 pull image with command: docker image pull labdocker/cadvisor:bitnami
 	2.2 docker run with command:
 	docker container run \
 --mount type=bind,source=/var/run,target=/var/run \
 --mount type=bind,source=/sys,target=/sys,readonly \
 --mount type=bind,source=/var/lib/docker,target=/var/lib/docker,readonly \
---publish=8080:8080 --detach=true --name=cadvisor labdocker/cadvisor:0.47.2
+--publish=8080:8080 --detach=true --name=cadvisor labdocker/cadvisor:bitnami
 
 	2.3 open browser with url: http://<Public IP>:8080 and workthrough
 
