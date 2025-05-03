@@ -66,7 +66,6 @@ Part3: Apparmor in Container
 
 2. Access in to container and test some activity:
 	docker container exec -it sectestdefault sh
-	ping 1.1.1.1
 	apk update
 	apk add curl
 	curl https://www.google.com
@@ -82,7 +81,7 @@ Part3: Apparmor in Container
 4. Stop test container by command: "docker container stop sectestdefault && docker container rm sectestdefault"
 
 5. Copy profile and Load apparmor restrict profile by command:
-	sudo apparmor_parser -r -W ~/docker-workshop-112023/Workshop-2-3-Docker-Security/restrict-apparmor
+	sudo apparmor_parser -r -W ~/docker-workshop-062025/Workshop-2-3-Docker-Security/restrict-apparmor
 
 6. Check current profile of apparmor by command: sudo aa-status
 
@@ -91,7 +90,6 @@ Part3: Apparmor in Container
 
 8. Access in to container and test some activity:
 	docker container exec -it sectestrestrict sh
-	ping 1.1.1.1
 	apk update
 	apk add curl
 	curl https://www.google.com
@@ -106,7 +104,7 @@ Part3: Apparmor in Container
 
 10. Stop test container by command: "docker container stop sectestrestrict && docker container rm sectestrestrict"
 
-11. Remove apparmor profile by command: sudo apparmor_parser -R ~/docker-workshop-112023/Workshop-2-3-Docker-Security/restrict-apparmor && sudo aa-status
+11. Remove apparmor profile by command: sudo apparmor_parser -R ~/docker-workshop-062025/Workshop-2-3-Docker-Security/restrict-apparmor && sudo aa-status
 
 
 -----------------------------------------------------------------------------------------------------------------

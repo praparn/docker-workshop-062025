@@ -75,34 +75,3 @@ NGINX Container:
 8. Clean Up Lab with command below
 	8.1 docker container stop rustweb rustcache
 	8.2 docker container rm rustweb rustcache
-
-
-Part 4: Rust Multistage Build Full Function RestAPI
-------------------------------------------------------------------------------------------------------------
-
-1. Check folder "Workshop-2-1-DockerFile" by command
-	ls ~/docker-workshop-062025/Workshop-2-1-DockerFile
-
-2. Pull require image on lab by command:
-	docker image pull labdocker/mariadb:lts
-	docker image pull labdocker/redis:7.2.7-alpine3.21
-
-3. Build module "webservice" by command:
-	cd ~/docker-workshop-062025/Workshop-2-1-DockerFile/rustrestapi
-	docker image build -t labdocker/webservice:1.0 -f dockerfile-rustrestapi --rm ./
-
-3. Build module "webcache" by command:
-	docker image build -t labdocker/webcache:1.0 -f dockerfile-nginxcache --rm ./
-
-4. 
-	(maindb: postgresql)
-	docker container run -dt --name maindb --net=restful_switch --network-alias=maindb -e POSTGRES_USER=webroot -e POSTGRES_PASSWORD=password labdocker/postgres:14.16-alpine3.20
-
-	(cachedb: redis)
-	docker container run -dt --name cachedb --net=restful_switch --network-alias=cachedb labdocker/redis:alpine3.18
-
-
-7. Clean Up lab by command:
-	docker container stop webcache webservice cachedb maindb
-	docker container rm webcache webservice cachedb maindb
-	docker network rm restful_switch
