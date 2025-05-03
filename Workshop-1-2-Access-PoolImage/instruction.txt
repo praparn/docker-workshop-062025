@@ -2,15 +2,16 @@ Pull image
 1. docker image pull labdocker/alpine:3.18.5
 2. docker image pull labdocker/alpine:3.13.6
 3. docker image pull labdocker/alpinewebrust:latest 
-4. docker image pull labdocker/cadvisor:0.40.0
+4. docker image pull labdocker/cadvisor:bitnami
 5. docker image pull labdocker/ubuntu:latest
-6. docker images or docker image ls==> check sizing and detail of all image
-7. docker image pull for lab day 2
+6. docker image pull labdocker/alpineweb:latest
+7. docker images or docker image ls==> check sizing and detail of all image
+8. docker image pull for lab day 2
     docker image pull labdocker/mariadb:11.2.2
     docker image pull labdocker/mariadb:10.5.12  
     docker image pull labdocker/alpinepython:2.7-onbuild
     docker image pull labdocker/linenotify:bot_v2
     docker image pull labdocker/cluster:webservicelite
-8. Check history of image by command: 
+9. Check history of image by command: 
     docker image history labdocker/alpine:3.18.5
-    docker image history labdocker/alpineweb:latest
+    docker image history labdocker/alpinewebrust:latest
