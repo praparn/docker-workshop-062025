@@ -1,5 +1,5 @@
 # Stage 1: Build the Rust application
-FROM labdocker/rust:1.72 as builder
+FROM labdocker/rust:1.81 as builder
 
 # Install musl-tools so we can link against musl (the builder image is Debian-based)
 RUN apt-get update && apt-get install -y musl-tools
