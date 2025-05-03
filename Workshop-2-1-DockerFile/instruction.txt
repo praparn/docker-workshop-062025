@@ -4,10 +4,10 @@ Part 1: Build image from scratch (multi method)
 -----------------------------------------------------------------------------------------------------------
 BUILD Scratch (From file):
 1. Check folder "Workshop-2-1-DockerFile" by command
-	ls ~/docker-workshop-012025/Workshop-2-1-DockerFile
+	ls ~/docker-workshop-062025/Workshop-2-1-DockerFile
 
 2. Build docker image from command: 
-	docker image build -t labdocker/hello-world:1.0 ~/docker-workshop-012025/Workshop-2-1-DockerFile/scratch/
+	docker image build -t labdocker/hello-world:1.0 ~/docker-workshop-062025/Workshop-2-1-DockerFile/scratch/
 
 3. Test run docker image from command: "docker container run --rm labdocker/hello-world:1.0"
 
@@ -16,10 +16,10 @@ Part 2: NODEJS/NGINX
 NODEJS Container:
 
 1. Check folder "Workshop-2-1-DockerFile" by command
-	ls ~/docker-workshop-012025/Workshop-2-1-DockerFile
+	ls ~/docker-workshop-062025/Workshop-2-1-DockerFile
 
 2. Build docker image from command: 
-	docker image build -t labdocker/node:1.0 ~/docker-workshop-012025/Workshop-2-1-DockerFile/nodejs
+	docker image build -t labdocker/node:1.0 ~/docker-workshop-062025/Workshop-2-1-DockerFile/nodejs
 
 3. Create custom network for support stack by command:
 	docker network create --driver bridge \
@@ -34,7 +34,7 @@ NODEJS Container:
 NGINX Container:
 
 6. Build docker image from command:
-	docker image build -t labdocker/web:1.0 ~/docker-workshop-012025/Workshop-2-1-DockerFile/nginx
+	docker image build -t labdocker/web:1.0 ~/docker-workshop-062025/Workshop-2-1-DockerFile/nginx
 
 7. Test run docker image from command: "docker container run -dt --name NGINX -p 8080:8080 --net=restful_switch --network-alias=nginx labdocker/web:1.0"
 
@@ -53,10 +53,10 @@ Part 3: Rust Multistage Build Basic
 RUST Container:
 
 1. Check folder "Workshop-2-1-DockerFile" by command
-	ls ~/docker-workshop-112023/Workshop-2-1-DockerFile
+	ls ~/docker-workshop-062025/Workshop-2-1-DockerFile
 
 2. Build module "rustweb" by command:
-	docker image build -t labdocker/rustweb:1.0 ~/docker-workshop-012025/Workshop-2-1-DockerFile/rustweb
+	docker image build -t labdocker/rustweb:1.0 ~/docker-workshop-062025/Workshop-2-1-DockerFile/rustweb
 
 3. Test run rust web server by command:
     docker container run -dt --name rustweb --net=restful_switch --network-alias=rustweb -p 5000:5000 labdocker/rustweb:1.0
@@ -65,7 +65,7 @@ RUST Container:
 
 NGINX Container:
 5. Build module "rustcache" by command:
-	docker image build -t labdocker/rustcache:1.0 ~/docker-workshop-012025/Workshop-2-1-DockerFile/rustcache
+	docker image build -t labdocker/rustcache:1.0 ~/docker-workshop-062025/Workshop-2-1-DockerFile/rustcache
 
 6. Test run rust cache by command:
     docker container run -dt --name rustcache --net=restful_switch --network-alias=rustcache -p 8080:8080 labdocker/rustcache:1.0
@@ -81,14 +81,14 @@ Part 4: Rust Multistage Build Full Function RestAPI
 ------------------------------------------------------------------------------------------------------------
 
 1. Check folder "Workshop-2-1-DockerFile" by command
-	ls ~/docker-workshop-112023/Workshop-2-1-DockerFile
+	ls ~/docker-workshop-062025/Workshop-2-1-DockerFile
 
 2. Pull require image on lab by command:
 	docker image pull labdocker/mariadb:lts
 	docker image pull labdocker/redis:7.2.7-alpine3.21
 
 3. Build module "webservice" by command:
-	cd ~/docker-workshop-112023/Workshop-2-1-DockerFile/rustrestapi
+	cd ~/docker-workshop-062025/Workshop-2-1-DockerFile/rustrestapi
 	docker image build -t labdocker/webservice:1.0 -f dockerfile-rustrestapi --rm ./
 
 3. Build module "webcache" by command:
